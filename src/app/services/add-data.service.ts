@@ -22,7 +22,20 @@ export class AddDataService {
         key: 'YOSEF_S_'+name,
         value: object,
       });
+
+      this.ofertasArray = JSON.parse(object);
     
+  }
+
+  async getDataFromStorage(name)
+  {
+    await Storage.get({ key: 'YOSEF_S_'+name }).then(res=>
+      {
+        console.log(JSON.parse(res.value));
+        
+        this.ofertasArray = JSON.parse(res.value);
+        
+      });
   }
 }
 

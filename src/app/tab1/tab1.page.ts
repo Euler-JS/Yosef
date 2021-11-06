@@ -18,12 +18,31 @@ export class Tab1Page {
     }
 
     novo: any = []
+
+    allOfertas:any
   
 
 
   constructor(
     public alertController: AlertController,
-    private addDataService: AddDataService) {}
+    private addDataService: AddDataService) {
+      addDataService.getDataFromStorage("ofertas")
+      
+    }
+
+    ionViewWillEnter() {
+   
+      this.allOfertas = this.addDataService.ofertasArray
+      console.log(this.allOfertas);
+  
+  
+    }  
+
+    ngOnInit() {
+      // this.apiService.getToken()
+      // this.allOfertas = this.addDataService.getDataFromStorage("ofertas")
+      // console.log(this.allOfertas);
+    }
 
   addOferta()
   {
@@ -66,6 +85,7 @@ export class Tab1Page {
             
             this.addDataService.addDataOnStorage("ofertas",JSON.stringify(this.addDataService.ofertasArray));
             console.log('Confirm Ok', val);
+            this.allOfertas = this.addDataService.ofertasArray
           }
         }
       ]
