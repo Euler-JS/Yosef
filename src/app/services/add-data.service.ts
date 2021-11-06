@@ -32,8 +32,15 @@ export class AddDataService {
     await Storage.get({ key: 'YOSEF_S_'+name }).then(res=>
       {
         console.log(JSON.parse(res.value));
+        if(res.value == null)
+        {
+          this.ofertasArray = []
+        }
+        else
+        {
+          this.ofertasArray = JSON.parse(res.value);
+        }
         
-        this.ofertasArray = JSON.parse(res.value);
         
       });
   }

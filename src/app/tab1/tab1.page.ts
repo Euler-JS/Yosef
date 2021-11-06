@@ -26,14 +26,26 @@ export class Tab1Page {
   constructor(
     public alertController: AlertController,
     private addDataService: AddDataService) {
-      addDataService.getDataFromStorage("ofertas")
+      try {
+        addDataService.getDataFromStorage("ofertas")
+      } catch (error) {
+        console.log("Sem ofertas registadas");
+        
+      }
+      
       
     }
 
     ionViewWillEnter() {
    
-      this.allOfertas = this.addDataService.ofertasArray
-      console.log(this.allOfertas);
+      try {
+        this.allOfertas = this.addDataService.ofertasArray
+      } catch (error) {
+        console.log("Array Vazio");
+        
+      }
+      
+      // console.log(this.allOfertas);
   
   
     }  
