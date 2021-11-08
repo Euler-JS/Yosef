@@ -12,44 +12,46 @@ export class Tab1Page {
 
   ofertaObject=
     {
-      'valor':'',
-      'data':'',
-      'id_user': null
-    }
+      valor:'',
+      data:'',
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      id_user: null
+    };
 
-    novo: any = []
+    novo: any = [];
 
-    allOfertas:any
-  
+    allOfertas: any;
+
 
 
   constructor(
     public alertController: AlertController,
     private addDataService: AddDataService) {
       try {
-        addDataService.getDataFromStorage("ofertas")
+        addDataService.getDataFromStorage('ofertas');
       } catch (error) {
-        console.log("Sem ofertas registadas");
-        
+        console.log('Sem ofertas registadas');
+
       }
-      
-      
+
+
     }
 
     ionViewWillEnter() {
-   
-      try {
-        this.allOfertas = this.addDataService.ofertasArray
-      } catch (error) {
-        console.log("Array Vazio");
-        
-      }
-      
-      // console.log(this.allOfertas);
-  
-  
-    }  
 
+      try {
+        this.allOfertas = this.addDataService.ofertasArray;
+      } catch (error) {
+        console.log('Array Vazio');
+
+      }
+
+      // console.log(this.allOfertas);
+
+
+    }
+
+    // eslint-disable-next-line @angular-eslint/use-lifecycle-interface
     ngOnInit() {
       // this.apiService.getToken()
       // this.allOfertas = this.addDataService.getDataFromStorage("ofertas")
@@ -58,7 +60,7 @@ export class Tab1Page {
 
   addOferta()
   {
-    this.ofertaAlert()
+    this.ofertaAlert();
   }
 
   async ofertaAlert() {
@@ -84,20 +86,20 @@ export class Tab1Page {
           text: 'Ok',
           handler: (val) => {
             const now = new Date();
-            console.log("Minha Data ",(new Date()).toISOString());
-            this.ofertaObject.valor = val['oferta']
-            this.ofertaObject.data = (new Date()).toISOString()
-            this.ofertaObject.id_user = 11
-            this.addDataService.ofertasArray.push(this.ofertaObject)
+            console.log('Minha Data ',(new Date()).toISOString());
+            this.ofertaObject.valor = val.oferta;
+            this.ofertaObject.data = (new Date()).toISOString();
+            this.ofertaObject.id_user = 11;
+            this.addDataService.ofertasArray.push(this.ofertaObject);
 
             // this.novo.push(this.ofertaObject)
             // novo.push(this.ofertaObject)
-            
+
             // console.log("Dados ", this.ofertaObject[0]);
-            
-            this.addDataService.addDataOnStorage("ofertas",JSON.stringify(this.addDataService.ofertasArray));
+
+            this.addDataService.addDataOnStorage('ofertas',JSON.stringify(this.addDataService.ofertasArray));
             console.log('Confirm Ok', val);
-            this.allOfertas = this.addDataService.ofertasArray
+            this.allOfertas = this.addDataService.ofertasArray;
           }
         }
       ]
@@ -106,7 +108,7 @@ export class Tab1Page {
     await alert.present();
   }
 
- 
+
     // async presentAlertPrompt() {
     //   const alert = await this.alertController.create({
     //     cssClass: 'my-custom-class',
@@ -186,11 +188,11 @@ export class Tab1Page {
     //       }
     //     ]
     //   });
-  
+
     //   await alert.present();
     // }
-  
 
-  
+
+
 
 }
