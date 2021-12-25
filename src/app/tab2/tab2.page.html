@@ -38,8 +38,8 @@
     </ion-col>
   </ion-row>
 
-  <div *ngFor="let item of allDizimos" >
-    <ion-row style="border-bottom: groove 0.0px; color: #508F82; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: small;  ">
+  <div *ngFor="let item of allDizimos; let index = index;" >
+    <ion-row [ngClass]="{'linha1': (index%2)==1,'linha2': (index%2) == 0}" style="border-bottom: groove 0.0px; color: #508F82; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: small;  ">
       <ion-col col-1>
         <ion-label>1</ion-label>
       </ion-col>
