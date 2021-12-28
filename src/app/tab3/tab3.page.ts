@@ -50,7 +50,7 @@ export class Tab3Page {
   async doacaoAlert() {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
-      header: 'Adiconar Oferta',
+      header: 'Registar Doações',
       inputs: [
         {
           name: 'doacao',

@@ -51,7 +51,7 @@ export class Tab2Page {
   async dizimoAlert() {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
-      header: 'Adiconar Oferta',
+      header: 'Registar Dízimo',
       inputs: [
         {
           name: 'dizimo',
