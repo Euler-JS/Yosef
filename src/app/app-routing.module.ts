@@ -8,6 +8,10 @@ const routes: Routes = [
   },  {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'dispesas',
+    loadChildren: () => import('./dispesas/dispesas.module').then( m => m.DispesasPageModule)
   }
 
 ];
