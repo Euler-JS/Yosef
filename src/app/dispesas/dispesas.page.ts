@@ -41,24 +41,13 @@ export class DispesasPage implements OnInit {
     public alertController: AlertController,
     private addDataService: AddDataService
   ) {
+    this.initDispesas()
 
-    try {
-      addDataService.getDataFromStorage('dispesasFixas');
-    } catch (error) {
-      console.log('Sem Dispesas Fixas registadas');
-
-    }
   }
 
+
   ionViewWillEnter() {
-
-    try {
-      this.allDispesasFixas = this.addDataService.dispesasFixasArray;
-    } catch (error) {
-      console.log('Array Vazio');
-
-    }
-
+    this.initArraysDispesas()
   }
 
   ngOnInit() {
@@ -84,7 +73,7 @@ export class DispesasPage implements OnInit {
         break;
 
       case 'nao_fixa':
-
+        this.dispesaFixaAlert("naoFixa")
         break;
 
       default:
@@ -124,21 +113,31 @@ export class DispesasPage implements OnInit {
             const now = new Date();
             console.log('Minha Data ', (new Date()).toISOString());
             this.dispesaFixaObject.valor = val.valor;
+            this.dispesaFixaObject.data = (new Date()).toISOString();
+            this.dispesaFixaObject.id_user = 11;
 
             if (shortCut === null) {
               this.dispesaFixaObject.nome = val.nome;
-            }
-            else {
-              this.dispesaFixaObject.nome = shortCut;
-            }
 
-            this.dispesaFixaObject.data = (new Date()).toISOString();
-            this.dispesaFixaObject.id_user = 11;
-            this.addDataService.dispesasFixasArray.push(this.dispesaFixaObject);
+              this.setDataDispesaFixa(val);
+            }
+            else if (shortCut != null) {
+             
+              
+              if (shortCut === "naoFixa") {
+              
+                alert.header = "Registar Dispesa Nao Fixa"
+              this.dispesaNaoFixaObject.nome = val.nome;
 
-            this.addDataService.addDataOnStorage('dispesasFixas', JSON.stringify(this.addDataService.dispesasFixasArray));
-            console.log('Confirm Ok', val);
-            this.allDispesasFixas = this.addDataService.dispesasFixasArray;
+              this.setDataDispesaNaoFixa(val)
+              }
+              else{
+                this.dispesaFixaObject.nome = shortCut;
+                this.setDataDispesaFixa(val)
+              }
+              
+            }
+            
           }
         }
       ]
@@ -146,12 +145,43 @@ export class DispesasPage implements OnInit {
 
 
     await alert.present();
+    console.log("Dispesa ", shortCut != null);
+    console.log("Dispesa ", shortCut === "naoFixa");
+    let element1 = <HTMLInputElement>document.getElementById("input-nome-dispesas-fixas");
     if (shortCut != null) {
-      let element1 = <HTMLInputElement>document.getElementById("input-nome-dispesas-fixas");
       element1.style.display = "none"
+      if (shortCut === "naoFixa") {
+        element1.style.display = "block"
+      }
+      
     }
 
 
+
+  }
+
+  setDataDispesaFixa(val) {
+    this.dispesaFixaObject.valor = val.valor;
+    this.dispesaFixaObject.data = (new Date()).toISOString();
+    this.dispesaFixaObject.id_user = 11;
+    this.addDataService.dispesasFixasArray.push(this.dispesaFixaObject);
+
+    this.addDataService.addDataOnStorage('dispesasFixas', JSON.stringify(this.addDataService.dispesasFixasArray));
+    console.log('Confirm Ok', val);
+    this.allDispesasFixas = this.addDataService.dispesasFixasArray;
+  }
+
+  setDataDispesaNaoFixa(val) {
+
+    this.dispesaNaoFixaObject.valor = val.valor;
+    this.dispesaNaoFixaObject.data = (new Date()).toISOString();
+    this.dispesaNaoFixaObject.id_user = 11;
+
+    this.addDataService.dispesasNaoFixasArray.push(this.dispesaNaoFixaObject);
+
+    this.addDataService.addDataOnStorage('dispesasNaoFixas', JSON.stringify(this.addDataService.dispesasNaoFixasArray));
+    console.log('Confirm Ok', val);
+    this.allDispesasNaoFixas = this.addDataService.dispesasNaoFixasArray;
   }
 
 
@@ -184,5 +214,38 @@ export class DispesasPage implements OnInit {
   adicionarDispesa(nome) {
     this.dispesaFixaAlert(nome)
   }
+
+  initDispesas() {
+    try {
+      this.addDataService.getDataFromStorage('dispesasFixas');
+    } catch (error) {
+      console.log('Sem Dispesas Fixas registadas');
+
+    }
+
+    try {
+      this.addDataService.getDataFromStorage('dispesasNaoFixas');
+    } catch (error) {
+      console.log('Sem Dispesas Nao Fixas registadas');
+
+    }
+  }
+
+  initArraysDispesas() {
+    try {
+      this.allDispesasFixas = this.addDataService.dispesasFixasArray;
+    } catch (error) {
+      console.log('Array Vazio');
+
+    }
+
+    try {
+      this.allDispesasNaoFixas = this.addDataService.dispesasNaoFixasArray;
+    } catch (error) {
+      console.log('Array Vazio');
+
+    }
+  }
+
 
 }
