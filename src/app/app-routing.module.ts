@@ -12,6 +12,10 @@ const routes: Routes = [
   {
     path: 'dispesas',
     loadChildren: () => import('./dispesas/dispesas.module').then( m => m.DispesasPageModule)
+  },
+  {
+    path: 'template',
+    loadChildren: () => import('./template/template.module').then( m => m.TemplatePageModule)
   }
 
 ];

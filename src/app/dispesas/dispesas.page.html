@@ -1,12 +1,71 @@
-<ion-header [translucent]="true" style="color: red;" color="red">
-  <ion-toolbar>
-    <ion-title>
-      Dispesas
-    </ion-title>
-  </ion-toolbar>
+<ion-header class="ion-no-border">
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-button>
+				<ion-icon name="apps"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+
+		<ion-buttons slot="end">
+			<ion-button class="bordered" fill="solid" color="light">
+				<ion-icon color="custom" name="notifications"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+	</ion-toolbar>
+
+	<ion-item lines="none">
+
+		<ion-avatar slot="start">
+			<img src="https://habib.al-mawali.com/wp-content/uploads/IMG_4838-1-768x768.jpg">
+    </ion-avatar>
+			<ion-label>
+				<p>Ola,</p>
+				<h3>Joao Simango</h3>
+			</ion-label>
+
+	</ion-item>
+
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content>
+
+  <div class="slides ion-margin-bottom">
+    <ion-slides [options]="slidesOptions">
+      <ion-slide>
+        <ion-card>
+          <ion-card-header>
+            <div class="main">
+              <img src="https://cfl.dropboxstatic.com/static/images/logo_catalog/twitter-card-glyph_m1%402x.png">
+            </div>
+            <img class="files" src="https://i.ibb.co/jD8ypLq/files.jpg">
+          </ion-card-header>
+          <ion-card-content class="ion-text-left">
+            <ion-card-title class="ion-margin-bottom">Dropbox</ion-card-title>
+            <ion-card-subtitle class="ion-text-right">10/50GB</ion-card-subtitle>
+            <ion-progress-bar value="0.5" color="custom"></ion-progress-bar>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card>
+          <ion-card-header>
+            <div class="main">
+              <img src="https://www.freeiconspng.com/uploads/google-drive-icon-18.png">
+            </div>
+            <img class="files" src="https://i.ibb.co/jD8ypLq/files.jpg">
+          </ion-card-header>
+          <ion-card-content class="ion-text-left">
+            <ion-card-title class="ion-margin-bottom">Google Drive</ion-card-title>
+            <ion-card-subtitle class="ion-text-right">10/50GB</ion-card-subtitle>
+            <ion-progress-bar value="0.4" color="warning"></ion-progress-bar>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+    </ion-slides>
+  </div>
+
   <div class="option">
 
     <div>
@@ -62,9 +121,9 @@
 
 
 
-    <div #map id="map" style="margin-top: 50px;" *ngIf="viewFixa">
+    <div #map id="map" style="margin-top: 0px;" *ngIf="viewFixa">
       <div>
-        <div class="ion-text-end" style="padding-bottom: 28px; padding-top: 19px;">
+        <div class="ion-text-end">
           <ion-button (click)="dispesa('fixa')" class="btn">
             <ion-icon slot="end" name="add"></ion-icon>
           </ion-button>
@@ -108,11 +167,11 @@
       </div>
     </div>
 
-    <div class="mode1" style="margin-top: 50px;" *ngIf="!viewFixa">
+    <div class="mode1" *ngIf="!viewFixa">
 
       <div>
 
-        <div class="ion-text-end" style="padding-bottom: 28px; padding-top: 19px;">
+        <div class="ion-text-end">
           <ion-button (click)="dispesa('nao_fixa')" class="btn">
             <ion-icon slot="end" name="add"></ion-icon>
           </ion-button>
