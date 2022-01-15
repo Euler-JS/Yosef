@@ -131,7 +131,7 @@
 
         <ion-row style="border:1px primary; color:rgb(172, 170, 170); font-size: inherit;
   background: #F5F6FA;
-  font-weight: bold;">
+  font-weight: bold;" class="espacoTabela">
           <ion-col col-1>
             <ion-label>#</ion-label>
           </ion-col>
@@ -147,7 +147,7 @@
         </ion-row>
 
         <div *ngFor="let item of allDispesasFixas; let index = index;" >
-          <ion-row [ngClass]="{'linha1': (index%2)==1,'linha2': (index%2) == 0}" style="border-bottom: groove 0.0px; color: #508F82; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: small;  ">
+          <ion-row class="espacoTabela" [ngClass]="{'linha1': (index%2)==1,'linha2': (index%2) == 0}" style="border-bottom: groove 0.0px; color: #508F82; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: small;  ">
             <ion-col col-1>
               <ion-label>1</ion-label>
             </ion-col>
@@ -179,7 +179,7 @@
 
         <ion-row style="border:1px primary; color:rgb(172, 170, 170); font-size: inherit;
   background: #F5F6FA;
-  font-weight: bold;">
+  font-weight: bold;" class="espacoTabela">
           <ion-col col-1>
             <ion-label>#</ion-label>
           </ion-col>
@@ -197,7 +197,7 @@
       </div>
 
       <div *ngFor="let item of allDispesasNaoFixas; let index = index;" >
-        <ion-row [ngClass]="{'linha1': (index%2)==1,'linha2': (index%2) == 0}" style="border-bottom: groove 0.0px; color: #508F82; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: small;  ">
+        <ion-row class="espacoTabela" [ngClass]="{'linha1': (index%2)==1,'linha2': (index%2) == 0}" style="border-bottom: groove 0.0px; color: #508F82; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: small;  ">
           <ion-col col-1>
             <ion-label>1</ion-label>
           </ion-col>

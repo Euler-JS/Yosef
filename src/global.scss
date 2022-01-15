@@ -31,12 +31,14 @@
     background: rgb(230, 230, 230);
 }
 
-
+// linear-gradient(90deg, rgba(43,90,148,1) 0%, rgba(45,112,229,1) 35%, rgba(45,112,229,1) 100%);
 ion-header {
 
     ion-toolbar, ion-item {
-      --background: #f1f5f8;
-      background: #f1f5f8;
+      // --background: #f1f5f8;
+      // background: #f1f5f8;
+      --background: antiquewhite;
+      background: antiquewhite;
       padding: 0 10px;
     }
   
@@ -66,11 +68,12 @@ ion-header {
   }
   
   ion-content {
-    --background: linear-gradient(90deg, rgba(43,90,148,1) 0%, rgba(45,112,229,1) 35%, rgba(45,112,229,1) 100%);
+    --background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255) 35%, rgba(255, 255, 255) 100%);
   
     .slides {
         height: 6rem;
-      background: #f1f5f8;
+      // background: #f1f5f8;
+      background: antiquewhite;
       padding: 4px 10px 20px 10px;
       border-radius: 0 0 28px 28px;
     }
@@ -81,7 +84,8 @@ ion-header {
       box-shadow: none;
       border-radius: 14px;
       padding: 14px;
-      background: rgba(255,255,255,.8);
+      // background: rgba(255,255,255,.8);
+      background: antiquewhite;
       .main {
         width: 60px;
         height: 60px;
@@ -140,4 +144,10 @@ ion-header {
   
     }
   
+  }
+
+  .espacoTabela
+  {
+    padding-left: 40px; 
+    padding-right: 40px;
   }
