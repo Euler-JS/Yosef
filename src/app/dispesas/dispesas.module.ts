@@ -7,12 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { DispesasPageRoutingModule } from './dispesas-routing.module';
 
 import { DispesasPage } from './dispesas.page';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    ComponentsModule,
     DispesasPageRoutingModule
   ],
   declarations: [DispesasPage]
