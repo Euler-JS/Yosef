@@ -37,9 +37,9 @@ ion-header {
     ion-toolbar, ion-item {
       // --background: #f1f5f8;
       // background: #f1f5f8;
-      --background: antiquewhite;
-      background: antiquewhite;
-      padding: 0 10px;
+      --background: rgb(211, 211, 211);
+      background: rgb(211, 211, 211);
+      // padding: 0 10px;
     }
   
     ion-toolbar {
@@ -73,19 +73,19 @@ ion-header {
     .slides {
         height: 7rem;
       // background: #f1f5f8;
-      background: antiquewhite;
+      background: rgb(88, 88, 88);
       padding: 4px 10px 20px 10px;
       border-radius: 0 0 28px 28px;
     }
   
     ion-card {
-      width: 100%;
-      height: 5rem;
+      width: 65%;
+      height: 4rem;
       box-shadow: none;
       border-radius: 14px;
       // padding: 14px;
       // background: rgba(255,255,255,.8);
-      background: antiquewhite;
+      background: rgb(211, 211, 211);
       .main {
         width: 40px;
         height: 40px;
@@ -113,7 +113,7 @@ ion-header {
     }
   
     .container {
-      padding: 6px 20px;
+      padding: 6px 0px;
       color: #FFFFFF;
   
       ion-item {
@@ -146,11 +146,6 @@ ion-header {
   
   }
 
-  .espacoTabela
-  {
-    padding-left: 40px; 
-    padding-right: 40px;
-  }
 
   .info-row-col
 {
