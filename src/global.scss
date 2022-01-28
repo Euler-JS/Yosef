@@ -67,6 +67,7 @@ ion-header {
   
   }
   
+
   ion-content {
     --background: linear-gradient(0deg, #3f4d67 0%, #9599E2 99%);
   
@@ -76,6 +77,11 @@ ion-header {
       background: rgb(88, 88, 88);
       padding: 4px 10px 20px 10px;
       border-radius: 0 0 28px 28px;
+    }
+
+    .espacoTabela{
+      background-color: #585858;
+      color: #dbdfe2;
     }
   
     ion-card {
