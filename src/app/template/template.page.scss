@@ -32,8 +32,10 @@ ion-header {
   }
   
   ion-content {
-    --background: linear-gradient(90deg, rgba(43,90,148,1) 0%, rgba(45,112,229,1) 35%, rgba(45,112,229,1) 100%);
-  
+    // --background: linear-gradient(90deg, rgba(43,90,148,1) 0%, rgba(45,112,229,1) 35%, rgba(45,112,229,1) 100%);
+    // background-color: #3f4d67;
+    --background-color: linear-gradient(0deg, #3f4d67 0%, #9599E2 99%);
+    
     .slides {
         height: 6rem;
       background: #f1f5f8;

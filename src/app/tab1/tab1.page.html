@@ -1,51 +1,47 @@
 <ion-header class="ion-no-border">
-	<ion-toolbar>
-		<ion-buttons slot="start">
-			<ion-button>
-				<ion-icon name="apps"></ion-icon>
-			</ion-button>
-		</ion-buttons>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon name="apps"></ion-icon>
+      </ion-button>
+    </ion-buttons>
 
-		<ion-buttons slot="end">
-			<ion-button class="bordered" fill="solid" color="light">
-				<ion-icon color="custom" name="notifications"></ion-icon>
-			</ion-button>
-		</ion-buttons>
-	</ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button class="bordered" fill="solid" color="light">
+        <ion-icon color="custom" name="notifications"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
 
-	<ion-item lines="none">
-
-		<ion-avatar slot="start">
-			<img src="https://habib.al-mawali.com/wp-content/uploads/IMG_4838-1-768x768.jpg">
+  <ion-item lines="none">
+    <ion-avatar slot="start">
+      <img src="/src/assets/icon/caixa-de-entrada.png" />
     </ion-avatar>
-			<ion-label>
-				<p>Ola,</p>
-				<h3>Joao Simango</h3>
-			</ion-label>
-
-	</ion-item>
-
+    <ion-label>
+      <p>Ola,</p>
+      <h3>Joao Simango</h3>
+    </ion-label>
+  </ion-item>
 </ion-header>
 
 <ion-content>
   <app-info></app-info>
-  
 
   <div class="container">
-
     <!-- <h2>Last File</h2> -->
-    
-    <div class="ion-text-end" >
-      <ion-button (click)="addOferta()" class="btn">
-        <ion-icon slot="end" name="add"></ion-icon>
+
+    <div class="ion-text-end">
+      <ion-button (click)="addOferta()" class="btn btn-success">
+        <ion-icon slot="end" name="add" style="padding-right: 10px"></ion-icon>
       </ion-button>
     </div>
-  
-    
-    
-    <ion-row style="border:2px primary; color:rgb(172, 170, 170); font-size: inherit;
-    background: #F5F6FA;
-    font-weight: bold;" class="espacoTabela">
+
+    <ion-row style="border: 2px primary; color: rgb(253, 253, 253); font-size: inherit; 
+    background: #7f86b9;
+        font-weight: bold;
+      "
+      class="espacoTabela"
+    >
       <ion-col col-4>
         <ion-label>#</ion-label>
       </ion-col>
@@ -56,9 +52,20 @@
         <ion-label>Data</ion-label>
       </ion-col>
     </ion-row>
-  
-    <div *ngFor="let item of allOfertas; let index = index;" class="espacoTabela">
-      <ion-row [ngClass]="{'linha1': (index%2)==1,'linha2': (index%2) == 0}" style="border-bottom: groove 0.0px; color: #508F82; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: small;  ">
+
+    <div
+      *ngFor="let item of allOfertas; let index = index;"
+      class="espacoTabela"
+    >
+      <ion-row
+        [ngClass]="{'linha1': (index%2)==1,'linha2': (index%2) == 0}"
+        style="
+          border-bottom: groove 0px;
+          color: #508f82;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          font-size: small;
+        "
+      >
         <ion-col col-4>
           <ion-label>1</ion-label>
         </ion-col>
@@ -70,11 +77,5 @@
         </ion-col>
       </ion-row>
     </div>
-
   </div>
-
 </ion-content>
-
-
-
-
