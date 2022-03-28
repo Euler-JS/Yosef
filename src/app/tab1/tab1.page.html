@@ -45,7 +45,7 @@
     
     <ion-row style="border:2px primary; color:rgb(172, 170, 170); font-size: inherit;
     background: #F5F6FA;
-    font-weight: bold;" class="espacoTabela">
+    font-weight: bold;">
       <ion-col col-4>
         <ion-label>#</ion-label>
       </ion-col>
@@ -57,7 +57,7 @@
       </ion-col>
     </ion-row>
   
-    <div *ngFor="let item of allOfertas; let index = index;" class="espacoTabela">
+    <div *ngFor="let item of allOfertas; let index = index;">
       <ion-row [ngClass]="{'linha1': (index%2)==1,'linha2': (index%2) == 0}" style="border-bottom: groove 0.0px; color: #508F82; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: small;  ">
         <ion-col col-4>
           <ion-label>1</ion-label>
